@@ -3,5 +3,8 @@
   "scripts": {
     "start": "node server"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^1.9.0"
+  }
 }
