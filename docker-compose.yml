@@ -1,0 +1,7 @@
+node:
+  build: ./app
+  volumes:
+    - ./app:/src/app
+  ports:
+    - "3000"
+  command: npm start

@@ -1,0 +1,7 @@
+{
+  "main": "server.js",
+  "scripts": {
+    "start": "node server"
+  },
+  "dependencies": {}
+}
