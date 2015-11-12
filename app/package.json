@@ -3,8 +3,14 @@
   "scripts": {
     "start": "node server"
   },
-  "dependencies": {},
+  "dependencies": {
+    "babel-core": "^6.1.4",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.1.4"
+  },
   "devDependencies": {
     "eslint": "^1.9.0"
+  },
+  "engines": {
+    "node": ">=4.0.0"
   }
 }
