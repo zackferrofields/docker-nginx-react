@@ -1,12 +1,16 @@
 import React, {createClass, PropTypes} from 'react';
 
+const Header = ({title}) => (
+  <h1>{title}</h1>
+);
+
 export default createClass({
   propTypes: {
     state: PropTypes.object.isRequired
   },
   render() {
     return (
-      <h1>{this.props.state.title}</h1>
+      <Header {...this.props.state}/>
     );
   }
 });

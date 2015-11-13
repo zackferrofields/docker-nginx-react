@@ -1,5 +1,3 @@
-'use strict';
-
 import {createServer} from 'http';
 import {readFile} from 'fs';
 import {format} from 'util';
@@ -12,7 +10,7 @@ const INDEX_PATH = './views/index.html';
 const TITLE = 'Hello World Page';
 
 function index(response) {
-  const state = { title: 'React Applications!' };
+  const state = { title: 'Hello World!' };
   const content = renderToString(createElement(Application, {state}));
   readFile(INDEX_PATH, 'utf8', (err, data) => {
     if (err) throw err;
