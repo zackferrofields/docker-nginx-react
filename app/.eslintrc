@@ -17,3 +17,4 @@ env:
   browser: true
 ecmaFeatures:
   modules: true
+  jsx: true
