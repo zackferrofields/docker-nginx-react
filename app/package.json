@@ -5,7 +5,10 @@
   },
   "dependencies": {
     "babel-core": "^6.1.4",
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.1.4"
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.1.4",
+    "babel-plugin-transform-react-jsx": "^6.1.18",
+    "react": "^0.14.2",
+    "react-dom": "^0.14.2"
   },
   "devDependencies": {
     "eslint": "^1.9.0"

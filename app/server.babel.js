@@ -1,25 +1,28 @@
 'use strict';
 
 import {createServer} from 'http';
-const PORT = process.env.PORT || 3000;
+import {readFile} from 'fs';
+import {format} from 'util';
+import {createElement} from 'react';
+import {renderToString} from 'react-dom/server';
+import Application from './Application.jsx';
 
-function helloWorld(response) {
-  response.writeHead(200, {'Content-Type': 'text/html'});
-  response.write(`
-    <!DOCTYPE "html">
-    <html>
-      <head>
-        <title>Hello World Page</title>
-      </head>
-      <body>
-        Hello, World!
-      </body>
-    </html>
-  `);
-  response.end();
+const PORT = process.env.PORT || 3000;
+const INDEX_PATH = './views/index.html';
+const TITLE = 'Hello World Page';
+
+function index(response) {
+  const state = { title: 'React Applications!' };
+  const content = renderToString(createElement(Application, {state}));
+  readFile(INDEX_PATH, 'utf8', (err, data) => {
+    if (err) throw err;
+    response.writeHead(200, {'Content-Type': 'text/html'});
+    response.write(format(data, TITLE, content));
+    response.end();
+  });
 }
 
-createServer((request, response) => helloWorld(response))
+createServer((request, response) => index(response))
   .listen(PORT);
 
 process.stdout.write(`Running on http://localhost:${PORT} \n`);
